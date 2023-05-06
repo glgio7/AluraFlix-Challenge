@@ -1,10 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import ReactDOM from "react-dom/client";
+import GlobalCSS from "./styles/globalcss.ts";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./index.tsx";
+import Header from "./components/Header/index.tsx";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+	<BrowserRouter>
+		<GlobalCSS />
+		<Header />
+		<Routes>
+			<Route path="/" element={<Home />} />
+		</Routes>
+	</BrowserRouter>
+);
