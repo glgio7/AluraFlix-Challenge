@@ -4,6 +4,8 @@ export interface IVideo {
 	category: string;
 }
 
-export interface IPlaylists {
-	[name: string]: IVideo[];
+export interface ICategory {
+	title: string;
+	color: string;
+	subtitle: string;
 }

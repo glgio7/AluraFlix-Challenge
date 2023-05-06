@@ -14,18 +14,8 @@ export const Container = styled.section`
 	min-height: 400px;
 `;
 
-export const Wrapper = styled.div<{ backgroundColor: string }>`
+export const Wrapper = styled.div`
 	width: 100%;
 
-	h2 {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-
-		width: 204px;
-		height: 60px;
-
-		background-color: ${({ backgroundColor }) => backgroundColor};
-		color: #fff;
-	}
+	margin-top: 3rem;
 `;
