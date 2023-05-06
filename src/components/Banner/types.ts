@@ -1,3 +1,5 @@
+import { ICurrentVideo } from "../../pages/types";
+
 export type BannerProps = {
-	videoKey: string;
+	currentVideo: ICurrentVideo;
 };

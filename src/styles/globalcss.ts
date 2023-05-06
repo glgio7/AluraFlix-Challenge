@@ -11,6 +11,7 @@ const GlobalCSS = createGlobalStyle`
   
   text-decoration: none;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -18,7 +19,7 @@ html, body {
   width: 100%;
   min-height: 100vh;
   
-  background-color: #222;
+  background-color: #101010;
 }
 
 img {

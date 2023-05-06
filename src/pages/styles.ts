@@ -5,8 +5,7 @@ export const Home = styled.main`
 `;
 
 export const Container = styled.section`
-	position: absolute;
-	top: 672px;
+	margin-top: -256px;
 
 	padding: 0 2rem;
 
@@ -15,6 +14,9 @@ export const Container = styled.section`
 `;
 
 export const Wrapper = styled.div`
+	z-index: 9;
+	position: relative;
+
 	width: 100%;
 
 	margin-top: 3rem;

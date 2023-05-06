@@ -1,12 +1,20 @@
-import { IVideo } from "../../pages/types";
+import React, { SetStateAction } from "react";
+import { ICurrentVideo, IVideo } from "../../pages/types";
 import * as S from "./styles";
 
 export type VideoListProps = {
 	list: IVideo[];
+	color: string;
+	setVideo: React.Dispatch<SetStateAction<ICurrentVideo>>;
 };
 
-const VideoList = ({ list }: VideoListProps) => {
+const VideoList = ({ list, color, setVideo }: VideoListProps) => {
 	const imageURL = "https://i3.ytimg.com/vi/";
+
+	const handleCurrentVideo = (video: IVideo) => {
+		const currentVideo = { ...video, color };
+		setVideo(currentVideo);
+	};
 
 	return (
 		<S.VideoList>
@@ -14,6 +22,7 @@ const VideoList = ({ list }: VideoListProps) => {
 				<S.VideoItem
 					key={index}
 					background={`url(${imageURL}${video.key}/maxresdefault.jpg)`}
+					onClick={() => handleCurrentVideo(video)}
 				></S.VideoItem>
 			))}
 		</S.VideoList>

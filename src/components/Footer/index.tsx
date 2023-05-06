@@ -1,14 +1,12 @@
 import * as S from "./styles";
 import logo from "../../assets/logo.svg";
-import Button from "../Button";
 
-const Header = () => {
+const Footer = () => {
 	return (
-		<S.Header>
+		<S.Footer>
 			<img src={logo} alt="Alura Flix logo" className="logo" />
-			<Button text="Novo vídeo" />
-		</S.Header>
+		</S.Footer>
 	);
 };
 
-export default Header;
+export default Footer;

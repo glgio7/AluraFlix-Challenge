@@ -9,6 +9,8 @@ export const VideoList = styled.ul`
 export const VideoItem = styled.li<{ background: string }>`
 	height: 260px;
 
+	cursor: pointer;
+
 	aspect-ratio: 16/9;
 
 	margin-top: 1rem;
