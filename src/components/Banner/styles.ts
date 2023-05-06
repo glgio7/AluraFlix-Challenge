@@ -74,13 +74,16 @@ export const Banner = styled.div<{ background: string }>`
 
 	@media screen and (max-width: 900px) {
 		height: 179px;
+
 		padding: 1rem;
+
 		border-bottom: none;
 
 		h3 {
 			font-size: 1.75rem;
-			margin-top: 9px;
 			line-height: 2rem;
+
+			margin-top: 9px;
 		}
 
 		.container__info {
@@ -89,6 +92,8 @@ export const Banner = styled.div<{ background: string }>`
 
 		.container {
 			flex-direction: column;
+
+			height: 100%;
 		}
 
 		.thumbnail {

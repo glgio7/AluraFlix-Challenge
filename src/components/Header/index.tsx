@@ -1,12 +1,17 @@
 import * as S from "./styles";
 import logo from "../../assets/logo.svg";
-import Button from "../Button";
+import MainButton from "../MainButton";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	return (
 		<S.Header>
-			<img src={logo} alt="Alura Flix logo" className="logo" />
-			<Button text="Novo vídeo" />
+			<Link to={"/"}>
+				<img src={logo} alt="Alura Flix logo" className="logo" />
+			</Link>
+			<Link to={"/newvideo"}>
+				<MainButton text="Novo vídeo" />
+			</Link>
 		</S.Header>
 	);
 };

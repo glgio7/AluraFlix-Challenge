@@ -1,28 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CategoriesContext } from "../contexts/Categories";
+import { ICurrentVideo, IVideo } from "./types";
 import * as S from "./styles";
 import Banner from "../components/Banner";
-import { ICategory, ICurrentVideo, IVideo } from "./types";
 import VideoList from "../components/VideoList";
 import CategoryTitle from "../components/CategoryTitle";
 import Footer from "../components/Footer";
-
-const categories: ICategory[] = [
-	{
-		title: "Front End",
-		color: "#6BD1FF",
-		subtitle: "Formação Front End da Alura",
-	},
-	{
-		title: "Data Science",
-		color: "#69953B",
-		subtitle: "Formação Data Science na Alura",
-	},
-	{
-		title: "Mobile",
-		color: "#FFBA05",
-		subtitle: "Formação Mobile da Alura",
-	},
-];
 
 const videos: IVideo[] = [
 	{
@@ -71,6 +54,8 @@ const videos: IVideo[] = [
 ];
 
 const Home: React.FC = () => {
+	const { categories } = useContext(CategoriesContext);
+
 	const [currentVideo, setCurrentVideo] = useState<ICurrentVideo>({
 		key: "kyFiT4ofMwk",
 		title: "Como deixar o Layout Responsivo no seu site",

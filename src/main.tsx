@@ -1,15 +1,12 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import GlobalCSS from "./styles/globalcss.ts";
-import Home from "./pages/index.tsx";
-import Header from "./components/Header/index.tsx";
+import { BrowserRouter } from "react-router-dom";
+import App from "./app.tsx";
+import CategoriesProvider from "./contexts/Categories/index.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<BrowserRouter>
-		<GlobalCSS />
-		<Header />
-		<Routes>
-			<Route path="/" element={<Home />} />
-		</Routes>
+		<CategoriesProvider>
+			<App />
+		</CategoriesProvider>
 	</BrowserRouter>
 );
