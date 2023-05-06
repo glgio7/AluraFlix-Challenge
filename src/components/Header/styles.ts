@@ -18,4 +18,13 @@ export const Header = styled.header`
 
 		object-fit: contain;
 	}
+
+	@media screen and (max-width: 900px) {
+		height: 40px;
+		justify-content: center;
+
+		.logo {
+			height: 25px;
+		}
+	}
 `;

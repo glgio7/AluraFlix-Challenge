@@ -2,6 +2,30 @@ import styled from "styled-components";
 
 export const Home = styled.main`
 	position: relative;
+
+	.watch-btn {
+		display: none;
+	}
+
+	@media screen and (max-width: 900px) {
+		padding-bottom: calc(54px + 3rem);
+
+		.watch-btn {
+			display: block;
+
+			width: 96px;
+			height: 30px;
+
+			margin: 0 auto;
+			margin-top: 9px;
+
+			border-radius: 4px;
+		}
+
+		footer {
+			display: none;
+		}
+	}
 `;
 
 export const Container = styled.section`
@@ -11,6 +35,12 @@ export const Container = styled.section`
 
 	max-width: 100%;
 	min-height: 400px;
+
+	@media screen and (max-width: 900px) {
+		margin-top: initial;
+
+		padding: 0 1rem;
+	}
 `;
 
 export const Wrapper = styled.div`

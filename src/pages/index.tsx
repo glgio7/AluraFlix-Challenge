@@ -4,6 +4,7 @@ import Banner from "../components/Banner";
 import { ICategory, ICurrentVideo, IVideo } from "./types";
 import VideoList from "../components/VideoList";
 import CategoryTitle from "../components/CategoryTitle";
+import Footer from "../components/Footer";
 
 const categories: ICategory[] = [
 	{
@@ -102,6 +103,7 @@ const Home: React.FC = () => {
 					</S.Wrapper>
 				))}
 			</S.Container>
+			<Footer />
 		</S.Home>
 	);
 };

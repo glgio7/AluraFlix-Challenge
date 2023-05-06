@@ -60,6 +60,7 @@ export const Banner = styled.div<{ background: string }>`
 		font-size: 1rem;
 
 		margin-top: 9px;
+		max-width: 80%;
 	}
 
 	.thumbnail {
@@ -69,5 +70,33 @@ export const Banner = styled.div<{ background: string }>`
 
 		border: 4px solid #6bd1ff;
 		border-radius: 4px;
+	}
+
+	@media screen and (max-width: 900px) {
+		height: 179px;
+		padding: 1rem;
+		border-bottom: none;
+
+		h3 {
+			font-size: 1.75rem;
+			margin-top: 9px;
+			line-height: 2rem;
+		}
+
+		.container__info {
+			width: 100%;
+		}
+
+		.container {
+			flex-direction: column;
+		}
+
+		.thumbnail {
+			display: none;
+		}
+
+		p {
+			display: none;
+		}
 	}
 `;

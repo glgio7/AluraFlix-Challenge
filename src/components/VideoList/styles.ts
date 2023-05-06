@@ -26,4 +26,10 @@ export const VideoItem = styled.li<{ background: string }>`
 	&:last-of-type {
 		margin-right: 0;
 	}
+
+	@media screen and (max-width: 900px) {
+		height: 144px;
+
+		margin-right: 1rem;
+	}
 `;

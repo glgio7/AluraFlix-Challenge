@@ -10,25 +10,36 @@ const Banner = ({ currentVideo }: BannerProps) => {
 			: currentVideo.title;
 
 	const description =
-		currentVideo.description.length > 300
-			? currentVideo.description.substring(0, 300) + "..."
+		currentVideo.description.length > 100
+			? currentVideo.description.substring(0, 100) + "..."
 			: currentVideo.description;
 
 	return (
-		<S.Banner background={`url(${imageURL})`}>
-			<div className="background"></div>
-			<div className="container">
-				<div className="container__info">
-					<CategoryTitle
-						color={currentVideo.color}
-						text={currentVideo.category}
-					/>
-					<h3>{title}</h3>
-					<p>{description}</p>
+		<>
+			<S.Banner background={`url(${imageURL})`}>
+				<div className="background"></div>
+				<div className="container">
+					<div className="container__info">
+						<CategoryTitle
+							color={currentVideo.color}
+							text={currentVideo.category}
+						/>
+						<h3>{title}</h3>
+						<p>{description}</p>
+					</div>
+					<a href={`https://youtu.be/${currentVideo.key}`} target="_blank">
+						<img
+							src={imageURL}
+							alt={currentVideo.title}
+							className="thumbnail"
+						/>
+					</a>
 				</div>
-				<img src={imageURL} alt={currentVideo.title} className="thumbnail" />
-			</div>
-		</S.Banner>
+			</S.Banner>
+			<a href={`https://youtu.be/${currentVideo.key}`} target="_blank">
+				<button className="watch-btn">Assistir</button>
+			</a>
+		</>
 	);
 };
 
