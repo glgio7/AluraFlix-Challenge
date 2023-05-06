@@ -6,6 +6,11 @@ const GlobalCSS = createGlobalStyle`
   padding: 0;
 
   box-sizing: border-box;
+
+  list-style: none;
+  
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 
 html, body {
@@ -13,7 +18,7 @@ html, body {
   width: 100%;
   min-height: 100vh;
   
-  background-color: #333;
+  background-color: #222;
 }
 
 img {
