@@ -22,7 +22,7 @@ export const Banner = styled.div<{ background: string }>`
 
 		z-index: -1;
 
-		opacity: 0.25;
+		opacity: 0.2;
 
 		height: 100%;
 		width: 100%;
@@ -31,7 +31,6 @@ export const Banner = styled.div<{ background: string }>`
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
-
 	.container {
 		width: 100%;
 		height: 200px;

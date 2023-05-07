@@ -29,6 +29,10 @@ img {
   height: 100%;
 }
 
+button{
+  cursor: pointer;
+}
+
 `;
 
 export default GlobalCSS;
