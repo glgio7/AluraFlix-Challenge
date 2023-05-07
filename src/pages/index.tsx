@@ -9,10 +9,9 @@ import CategoryTitle from "../components/CategoryTitle";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-const { videos } = useContext(VideosContext);
-
 const Home: React.FC = () => {
 	const { categories } = useContext(CategoriesContext);
+	const { videos } = useContext(VideosContext);
 
 	const [currentVideo, setCurrentVideo] = useState<ICurrentVideo>({
 		key: "kyFiT4ofMwk",
