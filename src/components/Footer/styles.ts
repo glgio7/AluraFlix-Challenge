@@ -9,8 +9,9 @@ export const Footer = styled.footer`
 	padding: 0 2rem;
 
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 
 	border-top: 2px solid #2a7ae4;
 
@@ -20,5 +21,19 @@ export const Footer = styled.footer`
 		height: 60px;
 
 		object-fit: contain;
+	}
+
+	p,
+	strong {
+		text-align: center;
+		color: #fff;
+	}
+
+	strong,
+	span {
+		font-weight: bold;
+	}
+	span {
+		color: #2a7ae4;
 	}
 `;

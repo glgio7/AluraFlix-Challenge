@@ -71,7 +71,7 @@ export const Actions = styled.div`
 			margin-bottom: 1rem;
 
 			min-width: 120px;
-			width: auto;
+			width: 45%;
 		}
 
 		.action-btn:nth-of-type(2) {
@@ -82,7 +82,6 @@ export const Actions = styled.div`
 
 export const CategoriesManager = styled.ul`
 	width: 100%;
-	height: 300px;
 
 	border-radius: 4px;
 
@@ -134,6 +133,28 @@ export const CategoriesManager = styled.ul`
 		transition: all 200ms;
 		&:hover {
 			opacity: 0.8;
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		li {
+			flex-wrap: wrap;
+		}
+
+		h4,
+		p {
+			width: 50%;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.editor-container {
+			width: 100%;
+		}
+
+		.editor__btn {
+			padding: 9px 0;
 		}
 	}
 `;
