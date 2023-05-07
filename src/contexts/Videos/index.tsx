@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { IVideo, IVideosContext, VideosProviderProps } from "./types";
 
 export const VideosContext = createContext<IVideosContext>(
@@ -51,6 +51,13 @@ const VideosProvider = ({ children }: VideosProviderProps) => {
 				"Tem vídeo novo do Alura+ no ar, pessoal! 🎉 Nesta semana, a Giovanna Moeller, Instrutora da Escola de Mobile da Alura, vai ensinar você a criar temas e estilos de cores no Swift!",
 		},
 	]);
+
+	useEffect(() => {
+		const savedVideos = localStorage.getItem("savedVideos");
+		if (savedVideos) {
+			setVideos(JSON.parse(savedVideos));
+		}
+	}, [videos]);
 
 	const contextValues = {
 		videos,

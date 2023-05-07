@@ -29,6 +29,10 @@ const NewVideo = () => {
 			videos.filter((video) => video.key === newVideo.key).length < 1
 		) {
 			setVideos(() => [...videos, newVideo]);
+			localStorage.setItem(
+				"savedVideos",
+				JSON.stringify([...videos, newVideo])
+			);
 			navigate("/");
 		} else if (
 			videos.filter((video) => video.key === newVideo.key).length >= 1
@@ -90,30 +94,33 @@ const NewVideo = () => {
 							onChange={(event) => setDescription(event.target.value)}
 						/>
 					</InputContainer>
+
+					<S.Actions>
+						<div className="action-container">
+							<input
+								onClick={() => addNewVideo()}
+								type="submit"
+								className="action-btn"
+								value={"Salvar"}
+							/>
+							<input
+								onClick={() => {
+									setKey("");
+									setTitle("");
+									setCategory("");
+									setDescription("");
+								}}
+								type="submit"
+								className="action-btn"
+								value={"Limpar"}
+							/>
+						</div>
+						<Link to="/newcategory" className="action-btn">
+							Nova categoria
+						</Link>
+					</S.Actions>
 				</Form>
 			</div>
-
-			<S.Actions>
-				<div className="action-container">
-					<button className="action-btn" onClick={() => addNewVideo()}>
-						Salvar
-					</button>
-					<button
-						className="action-btn"
-						onClick={() => {
-							setKey("");
-							setTitle("");
-							setCategory("");
-							setDescription("");
-						}}
-					>
-						Limpar
-					</button>
-				</div>
-				<Link to="/newcategory" className="action-btn">
-					Nova categoria
-				</Link>
-			</S.Actions>
 			<Footer />
 		</S.NewVideo>
 	);

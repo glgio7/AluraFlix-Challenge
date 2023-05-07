@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
 	ICategory,
 	categoriesProviderProps,
@@ -33,6 +33,14 @@ const CategoriesProvider = ({ children }: categoriesProviderProps) => {
 				"Desenvolvimento de aplicativos para dispositivos móveis, como smartphones e tablets.",
 		},
 	]);
+
+	useEffect(() => {
+		const savedCategories = localStorage.getItem("savedCategories");
+
+		if (savedCategories) {
+			setCategories(JSON.parse(savedCategories));
+		}
+	}, [categories]);
 
 	const contextValues = {
 		categories,

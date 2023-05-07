@@ -27,6 +27,10 @@ const NewCategory = () => {
 				.length < 1
 		) {
 			setCategories(() => [...categories, newCategory]);
+			localStorage.setItem(
+				"savedCategories",
+				JSON.stringify([...categories, newCategory])
+			);
 			navigate("/");
 		} else if (
 			categories.filter((category) => category.title === newCategory.title)
@@ -87,14 +91,14 @@ const NewCategory = () => {
 								value={"Salvar"}
 							/>
 							<input
-								type="submit"
-								className="action-btn"
 								onClick={() => {
 									setColor("");
 									setTitle("");
 									setSubtitle("");
 									setDescription("");
 								}}
+								type="submit"
+								className="action-btn"
 								value={"Limpar"}
 							/>
 						</div>

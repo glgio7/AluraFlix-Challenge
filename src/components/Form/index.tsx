@@ -6,7 +6,7 @@ type FormProps = {
 };
 
 const Form = ({ children }: FormProps) => {
-	return <S.Form>{children}</S.Form>;
+	return <S.Form onSubmit={(e) => e.preventDefault()}>{children}</S.Form>;
 };
 
 export default Form;
