@@ -1,18 +1,40 @@
 import { useContext, useState } from "react";
 import { CategoriesContext } from "../../contexts/Categories";
+import { Link, useNavigate } from "react-router-dom";
+import { VideosContext } from "../../contexts/Videos";
 import * as S from "./styles";
 import Form from "../../components/Form";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { Link } from "react-router-dom";
 
 const NewVideo = () => {
+	const { videos, setVideos } = useContext(VideosContext);
+	const { categories } = useContext(CategoriesContext);
+
 	const [key, setKey] = useState<string>("");
 	const [title, setTitle] = useState<string>("");
 	const [category, setCategory] = useState<string>("");
 	const [description, setDescription] = useState<string>("");
 
-	const { categories } = useContext(CategoriesContext);
+	const navigate = useNavigate();
+
+	const newVideo = { key, title, category, description };
+
+	const addNewVideo = () => {
+		if (
+			newVideo.key &&
+			newVideo.category &&
+			newVideo.title &&
+			videos.filter((video) => video.key === newVideo.key).length < 1
+		) {
+			setVideos(() => [...videos, newVideo]);
+			navigate("/");
+		} else if (
+			videos.filter((video) => video.key === newVideo.key).length >= 1
+		) {
+			alert(`O vídeo já está na lista de videos em ${newVideo.category}`);
+		} else alert("Preencha os campos");
+	};
 
 	return (
 		<S.NewVideo>
@@ -72,10 +94,7 @@ const NewVideo = () => {
 
 			<S.Actions>
 				<div className="action-container">
-					<button
-						className="action-btn"
-						onClick={() => console.log({ key, title, category, description })}
-					>
+					<button className="action-btn" onClick={() => addNewVideo()}>
 						Salvar
 					</button>
 					<button
