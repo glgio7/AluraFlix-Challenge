@@ -1,6 +1,7 @@
 import React, { SetStateAction } from "react";
-import { ICurrentVideo, IVideo } from "../../pages/types";
+import { ICurrentVideo } from "../../pages/types";
 import * as S from "./styles";
+import { IVideo } from "../../contexts/Videos/types";
 
 export type VideoListProps = {
 	list: IVideo[];
