@@ -8,6 +8,8 @@ import VideoList from "../components/VideoList";
 import CategoryTitle from "../components/CategoryTitle";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import MainButton from "../components/MainButton";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
 	const { categories } = useContext(CategoriesContext);
@@ -49,6 +51,9 @@ const Home: React.FC = () => {
 						</S.Wrapper>
 					))}
 				</S.Container>
+				<Link to={"/newvideo"} className="newvideo-btn">
+					<MainButton text="Novo vídeo" />
+				</Link>
 				<Footer />
 			</S.Home>
 		</>

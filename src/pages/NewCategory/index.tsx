@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import InputContainer from "../../components/InputContainer";
 import { useNavigate } from "react-router-dom";
+import { ICategory } from "../../contexts/Categories/types";
 
 const NewCategory = () => {
 	const { categories, setCategories } = useContext(CategoriesContext);
@@ -40,6 +41,14 @@ const NewCategory = () => {
 		} else {
 			alert("Preencha todos os campos!");
 		}
+	};
+
+	const removeCategory = (category: ICategory) => {
+		const newCategoriesList = categories.filter(
+			(item) => item.title !== category.title
+		);
+		setCategories(newCategoriesList);
+		localStorage.setItem("savedCategories", JSON.stringify(newCategoriesList));
 	};
 
 	return (
@@ -104,7 +113,33 @@ const NewCategory = () => {
 						</div>
 					</S.Actions>
 				</Form>
+				<S.CategoriesManager>
+					<li>
+						<h4>Nome</h4>
+						<p>Descrição</p>
+						<div className="editor-container">
+							<span>Editar</span>
+							<span>Excluir</span>
+						</div>
+					</li>
+					{categories.map((item) => (
+						<li key={item.title}>
+							<h4>{item.title}</h4>
+							<p>{item.description}</p>
+							<div className="editor-container">
+								<button className="editor__btn">Editar</button>
+								<button
+									className="editor__btn"
+									onClick={() => removeCategory(item)}
+								>
+									Excluir
+								</button>
+							</div>
+						</li>
+					))}
+				</S.CategoriesManager>
 			</div>
+
 			<Footer />
 		</S.NewCategory>
 	);

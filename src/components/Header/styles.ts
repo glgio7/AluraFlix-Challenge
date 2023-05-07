@@ -23,6 +23,10 @@ export const Header = styled.header`
 		height: 40px;
 		justify-content: center;
 
+		button {
+			display: none;
+		}
+
 		.logo {
 			height: 25px;
 		}

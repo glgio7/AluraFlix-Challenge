@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Home = styled.main`
 	position: relative;
 
+	.newvideo-btn,
 	.watch-btn {
 		display: none;
 	}
@@ -20,6 +21,10 @@ export const Home = styled.main`
 			margin-top: 9px;
 
 			border-radius: 4px;
+		}
+
+		.newvideo-btn {
+			display: initial;
 		}
 
 		footer {

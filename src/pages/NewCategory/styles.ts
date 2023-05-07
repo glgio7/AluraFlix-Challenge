@@ -16,10 +16,6 @@ export const NewCategory = styled.main`
 		margin-block: 60px;
 	}
 
-	button {
-		display: none;
-	}
-
 	@media screen and (max-width: 900px) {
 		.container {
 			padding: 1rem;
@@ -80,6 +76,64 @@ export const Actions = styled.div`
 
 		.action-btn:nth-of-type(2) {
 			margin-left: 0;
+		}
+	}
+`;
+
+export const CategoriesManager = styled.ul`
+	width: 100%;
+	height: 300px;
+
+	border-radius: 4px;
+
+	margin-top: 72px;
+
+	color: #fff;
+
+	li {
+		display: flex;
+		border: 1px solid #2a7ae4;
+	}
+
+	h4,
+	p,
+	.editor-container {
+		border: 1px solid #2a7ae4;
+		padding: 9px;
+	}
+
+	h4 {
+		font-size: 1rem;
+		width: 30%;
+	}
+
+	p {
+		width: 100%;
+	}
+
+	.editor-container {
+		display: flex;
+		justify-content: space-between;
+		width: 30%;
+	}
+
+	span {
+		width: 45%;
+		text-align: center;
+	}
+
+	.editor__btn {
+		width: 45%;
+
+		color: #fff;
+		background-color: #2a7ae4;
+
+		border-radius: 4px;
+		font-weight: bold;
+
+		transition: all 200ms;
+		&:hover {
+			opacity: 0.8;
 		}
 	}
 `;
