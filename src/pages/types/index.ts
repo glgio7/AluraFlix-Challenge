@@ -1,16 +1,5 @@
-export interface IVideo {
-	key: string;
-	title: string;
-	category: string;
-	description: string;
-}
+import { IVideo } from "../../contexts/Videos/types";
 
 export interface ICurrentVideo extends IVideo {
 	color: string;
-}
-
-export interface ICategory {
-	title: string;
-	color: string;
-	subtitle: string;
 }
