@@ -4,6 +4,7 @@ export interface ICategory {
 	title: string;
 	color: string;
 	subtitle: string;
+	description: string;
 }
 
 export interface ICategoriesContext {

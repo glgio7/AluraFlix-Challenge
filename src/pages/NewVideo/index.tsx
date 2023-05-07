@@ -6,6 +6,7 @@ import * as S from "./styles";
 import Form from "../../components/Form";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import InputContainer from "../../components/InputContainer";
 
 const NewVideo = () => {
 	const { videos, setVideos } = useContext(VideosContext);
@@ -42,7 +43,7 @@ const NewVideo = () => {
 			<div className="container">
 				<h3>Novo vídeo</h3>
 				<Form>
-					<div className="input-container">
+					<InputContainer>
 						<label htmlFor="title">Titulo</label>
 						<input
 							id="title"
@@ -50,8 +51,8 @@ const NewVideo = () => {
 								setTitle(event.target.value)
 							}
 						/>
-					</div>
-					<div className="input-container">
+					</InputContainer>
+					<InputContainer>
 						<label htmlFor="title">Key do video</label>
 						<input
 							value={key}
@@ -60,15 +61,15 @@ const NewVideo = () => {
 							onChange={(event) => setKey(event.target.value)}
 							required
 						/>
-					</div>
-					<div className="input-container">
+					</InputContainer>
+					<InputContainer>
 						<label>Thumbnail do video</label>
 						<input
 							value={`https://i3.ytimg.com/vi/${key}/maxresdefault.jpg`}
 							readOnly
 						/>
-					</div>
-					<div className="input-container">
+					</InputContainer>
+					<InputContainer>
 						<select
 							onChange={(e) => setCategory(e.target.value)}
 							value={category}
@@ -80,15 +81,15 @@ const NewVideo = () => {
 								</option>
 							))}
 						</select>
-					</div>
-					<div className="input-container">
+					</InputContainer>
+					<InputContainer>
 						<textarea
 							placeholder="Descrição"
 							value={description}
 							required
 							onChange={(event) => setDescription(event.target.value)}
 						/>
-					</div>
+					</InputContainer>
 				</Form>
 			</div>
 
@@ -109,7 +110,7 @@ const NewVideo = () => {
 						Limpar
 					</button>
 				</div>
-				<Link to="/" className="action-btn">
+				<Link to="/newcategory" className="action-btn">
 					Nova categoria
 				</Link>
 			</S.Actions>

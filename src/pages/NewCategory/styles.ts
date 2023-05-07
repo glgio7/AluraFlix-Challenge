@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NewVideo = styled.main`
+export const NewCategory = styled.main`
 	.container {
 		padding: 2rem;
 	}
@@ -34,8 +34,6 @@ export const Actions = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
-	padding: 0 2rem;
-
 	.action-container {
 		display: flex;
 	}
@@ -65,7 +63,6 @@ export const Actions = styled.div`
 		}
 	}
 	@media screen and (max-width: 900px) {
-		padding: 0 1rem;
 		flex-wrap: wrap;
 		justify-content: flex-end;
 
@@ -76,6 +73,9 @@ export const Actions = styled.div`
 
 		.action-btn {
 			margin-bottom: 1rem;
+
+			min-width: 120px;
+			width: auto;
 		}
 
 		.action-btn:nth-of-type(2) {

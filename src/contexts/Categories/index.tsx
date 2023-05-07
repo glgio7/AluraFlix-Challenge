@@ -15,16 +15,22 @@ const CategoriesProvider = ({ children }: categoriesProviderProps) => {
 			title: "Front End",
 			color: "#6BD1FF",
 			subtitle: "Formação Front End da Alura",
+			description:
+				"Desenvolvimento de interfaces de usuário para aplicações web e móveis.",
 		},
 		{
 			title: "Data Science",
 			color: "#69953B",
 			subtitle: "Formação Data Science na Alura",
+			description:
+				"Análise e interpretação de dados complexos para obter insights valiosos.",
 		},
 		{
 			title: "Mobile",
 			color: "#FFBA05",
 			subtitle: "Formação Mobile da Alura",
+			description:
+				"Desenvolvimento de aplicativos para dispositivos móveis, como smartphones e tablets.",
 		},
 	]);
 
